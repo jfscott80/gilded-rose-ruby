@@ -15,7 +15,9 @@ class GildedRose
   end
   def brie_tick
     @days_remaining -= 1
-    @quality += 1
+    if @quality != 50
+      @quality += 1
+    end
   end
 
 
