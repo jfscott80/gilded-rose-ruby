@@ -28,13 +28,30 @@ class GildedRose
   def backstage_tick
     @days_remaining -= 1
     if @days_remaining < 0
-      @quality = 0
+      return @quality = 0
     end
-    if @days_remaining >= 10 && @quality != 50
+    if @quality != 50
+      if @days_remaining <= 10
+        @quality += 1
+        if @days_remaining <= 5
+          @quality += 1
+        end
+      end
       @quality += 1
     end
-
   end
+
+
+
+  #     if @days_remaining >= 5
+  #       @quality += 1
+  #       if @days_remaining >= 10 
+  #       @quality += 1
+  #       end
+  #     end
+  #   end
+
+  # end
 
   def tick
     case name
