@@ -7,7 +7,10 @@ class GildedRose
     @quality = quality
     
   end
-
+  def item
+    #custom getters needed for days remaining and quality
+    
+  end
   def normal_tick
     @item = Normal.new(quality:, days_remaining:)
     @item.tick
