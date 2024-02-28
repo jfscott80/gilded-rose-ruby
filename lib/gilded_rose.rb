@@ -26,7 +26,11 @@ class GildedRose
   end
 
   def backstage_tick
-    return
+    @days_remaining -= 1
+    if @days_remaining < 0
+      @quality = 0
+    end
+
   end
 
   def tick
