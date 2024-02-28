@@ -24,23 +24,33 @@ class GildedRose
   def sulfuras_tick
     return
   end
-
   def backstage_tick
     @days_remaining -= 1
-    if @days_remaining < 0
-      return @quality = 0
-    end
-    if @quality != 50
-      # @quality += 1
-      if @days_remaining < 10
-        @quality += 1
-        if @days_remaining < 5
-          @quality += 1
-        end
-      end
-      @quality += 1
-    end
+    return @quality = 0 if @days_remaining <0
+    return if @quality == 50
+
+    @quality += 1
+    @quality += 1 if @days_remaining < 10
+    @quality += 1 if @days_remaining < 5
+
+
   end
+  # def backstage_tick
+  #   # @days_remaining -= 1
+  #   # if @days_remaining < 0
+  #   #   return @quality = 0
+  #   # end
+  #   # if @quality != 50
+  #     # @quality += 1
+  #     if @days_remaining < 10
+  #       @quality += 1
+  #       if @days_remaining < 5
+  #         @quality += 1
+  #       end
+  #     end
+  #     @quality += 1
+  #   end
+  # end
 
 
 
