@@ -25,6 +25,10 @@ class GildedRose
     return
   end
 
+  def backstage_tick
+    return
+  end
+
   def tick
     case name
     when 'Normal Item'
@@ -33,6 +37,8 @@ class GildedRose
       return brie_tick
     when 'Sulfuras, Hand of Ragnaros'
       return sulfuras_tick
+    when 'Backstage passes to a TAFKAL80ETC concert'
+      return backstage_tick
     end
     if @name != "Aged Brie" and @name != "Backstage passes to a TAFKAL80ETC concert"
       if @quality > 0
