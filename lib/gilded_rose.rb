@@ -7,9 +7,14 @@ class GildedRose
     @quality = quality
   end
 
+  def normal tick
+    @quality -= 1
+    @days_remaining -= 1
+    
+  end
   def tick
     if name == 'Normal Item'
-      return
+      return normal tick
 
     end
     if @name != "Aged Brie" and @name != "Backstage passes to a TAFKAL80ETC concert"
